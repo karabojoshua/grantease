@@ -1,0 +1,21 @@
+{
+    "files.exclude": {
+        "**/package.json": true,
+        "**/node_modules": true,
+
+        "**/README.md": true,
+        "**/.git*": true,
+        
+        "**/dist": true,
+        "**/pnpm*": true,
+        "**/vite*": true,
+        "**/*config*": true,
+        "**/.es*": true,
+
+        "**/*docker*": true,
+        "**/Dockerfile": true,
+        },
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always"
+    },
+}
