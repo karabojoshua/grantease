@@ -17,12 +17,12 @@ Make sure you have [Node.js](https://nodejs.org/) and [PNPM](https://pnpm.io/) i
 
 1. Clone the repository.
     ```shell
-    git clone https://github.com/TheNumbered/funding-request.git
+    git clone https://github.com/TheNumbered/grant-ease.git
     ```
 
 2. Navigate to the project directory.
     ```shell
-    cd funding-request
+    cd grant-ease
     ```
 
 3. Install the dependencies using PNPM.
