@@ -1,6 +1,7 @@
 
-export const CenteredLayout = ({ children }) => {
+export const CenteredLayout = ({ children, extras }) => {
   return <section
+    className="centered-layout"
     style={{
       display: "flex",
       justifyContent: "center",
@@ -8,5 +9,6 @@ export const CenteredLayout = ({ children }) => {
       height: "100vh",
       width: "100%",
     }}
+    {...extras}
   >{children}</section>;
 };
