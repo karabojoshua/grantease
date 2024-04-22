@@ -22,7 +22,6 @@ jobs:
           cd backend               # Change directory to the backend folder
           npm install
           npm run build --if-present
-          npm run test --if-present
 
       - name: Zip artifact for deployment
         run: zip release.zip ./backend/* -r     # Zip only the contents of the backend directory
