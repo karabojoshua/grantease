@@ -6,7 +6,7 @@ import cors from 'cors';
 import express from 'express';
 import mysql2 from 'mysql2';
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // MySQL database configuration
 let dbConfig;

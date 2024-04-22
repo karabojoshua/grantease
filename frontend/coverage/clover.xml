@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1713792952296" clover="3.2.0">
+  <project timestamp="1713792952296" name="All files">
+    <metrics statements="283" coveredstatements="71" conditionals="16" coveredconditionals="4" methods="14" coveredmethods="4" elements="313" coveredelements="79" complexity="0" loc="283" ncloc="283" packages="6" files="15" classes="15"/>
+    <package name="src">
+      <metrics statements="87" coveredstatements="32" conditionals="6" coveredconditionals="1" methods="3" coveredmethods="1"/>
+      <file name="App.jsx" path="C:\Users\user\Desktop\grant-ease\frontend\src\App.jsx">
+        <metrics statements="39" coveredstatements="32" conditionals="4" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+      </file>
+      <file name="main.jsx" path="C:\Users\user\Desktop\grant-ease\frontend\src\main.jsx">
+        <metrics statements="34" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+      </file>
+      <file name="theme.ts" path="C:\Users\user\Desktop\grant-ease\frontend\src\theme.ts">
+        <metrics statements="14" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.dataprovider">
+      <metrics statements="143" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="6" coveredmethods="0"/>
+      <file name="createOne.ts" path="C:\Users\user\Desktop\grant-ease\frontend\src\dataprovider\createOne.ts">
+        <metrics statements="29" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+      </file>
+      <file name="deleteOne.ts" path="C:\Users\user\Desktop\grant-ease\frontend\src\dataprovider\deleteOne.ts">
+        <metrics statements="28" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+      </file>
+      <file name="getMany.ts" path="C:\Users\user\Desktop\grant-ease\frontend\src\dataprovider\getMany.ts">
+        <metrics statements="24" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+      </file>
+      <file name="getOne.ts" path="C:\Users\user\Desktop\grant-ease\frontend\src\dataprovider\getOne.ts">
+        <metrics statements="25" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+      </file>
+      <file name="index.ts" path="C:\Users\user\Desktop\grant-ease\frontend\src\dataprovider\index.ts">
+        <metrics statements="7" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="updateOne.ts" path="C:\Users\user\Desktop\grant-ease\frontend\src\dataprovider\updateOne.ts">
+        <metrics statements="30" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.layouts">
+      <metrics statements="20" coveredstatements="18" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="1"/>
+      <file name="centered-layout.jsx" path="C:\Users\user\Desktop\grant-ease\frontend\src\layouts\centered-layout.jsx">
+        <metrics statements="14" coveredstatements="14" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+      </file>
+      <file name="index.js" path="C:\Users\user\Desktop\grant-ease\frontend\src\layouts\index.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+      <file name="main-layout.jsx" path="C:\Users\user\Desktop\grant-ease\frontend\src\layouts\main-layout.jsx">
+        <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages">
+      <metrics statements="12" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="test.jsx" path="C:\Users\user\Desktop\grant-ease\frontend\src\pages\test.jsx">
+        <metrics statements="12" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.sign-in">
+      <metrics statements="10" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="sign-in.jsx" path="C:\Users\user\Desktop\grant-ease\frontend\src\pages\sign-in\sign-in.jsx">
+        <metrics statements="10" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.sign-up">
+      <metrics statements="11" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="sign-up.jsx" path="C:\Users\user\Desktop\grant-ease\frontend\src\pages\sign-up\sign-up.jsx">
+        <metrics statements="11" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

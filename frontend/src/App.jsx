@@ -1,14 +1,15 @@
-import { SignIn, SignUp, UserButton, UserProfile, useAuth } from "@clerk/clerk-react";
+import { UserButton, UserProfile, useAuth } from "@clerk/clerk-react";
 import { CircularProgress } from "@mui/material";
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { CenteredLayout, MainLayout } from "./layouts";
-import { TestPage } from "./pages/test";
+import { SignInPage } from "./pages/sign-in/sign-in";
+import { SignUpPage } from "./pages/sign-up/sign-up";
 
 function App() {
   const { isLoaded, isSignedIn } = useAuth();
 
   if (!isLoaded) {
-    return <CenteredLayout><CircularProgress /></CenteredLayout>
+    return <CenteredLayout extras={{ "data-testid": "loading-page" }}><CircularProgress /></CenteredLayout>
   }
 
   return (
@@ -18,14 +19,13 @@ function App() {
           <Route element={<MainLayout><Outlet /></MainLayout>}>
             <Route path="/dashboard" element={<UserButton />} />
             <Route path="/profile" element={<UserProfile />} />
-
-            <Route path="/test" element={<TestPage/>} />
+            <Route path="/onboarding" element={<UserProfile />} />
           </Route>
         )}
         {!isSignedIn && (
-          <Route element={<CenteredLayout><Outlet /></CenteredLayout>}>
-            <Route path="/sign-in" element={<SignIn />} />
-            <Route path="/sign-up" element={<SignUp />} />
+          <Route element={<Outlet />}>
+            <Route path="/sign-in" element={<SignInPage />} />
+            <Route path="/sign-up" element={<SignUpPage />} />
           </Route>
         )}
 
