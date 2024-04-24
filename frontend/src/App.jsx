@@ -1,8 +1,8 @@
-import { UserButton, UserProfile, useAuth } from "@clerk/clerk-react";
+import { SignIn, UserProfile, useAuth } from "@clerk/clerk-react";
 import { CircularProgress } from "@mui/material";
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { CenteredLayout, MainLayout } from "./layouts";
-import { SignInPage } from "./pages/sign-in/sign-in";
+import Dashboard from "./pages/admin-dashboard/Dashboard";
 import { SignUpPage } from "./pages/sign-up/sign-up";
 
 function App() {
@@ -17,14 +17,14 @@ function App() {
       <Routes>
         {isSignedIn && (
           <Route element={<MainLayout><Outlet /></MainLayout>}>
-            <Route path="/dashboard" element={<UserButton />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/onboarding" element={<UserProfile />} />
           </Route>
         )}
         {!isSignedIn && (
           <Route element={<Outlet />}>
-            <Route path="/sign-in" element={<SignInPage />} />
+            <Route path="/sign-in" element={<SignIn />} />
             <Route path="/sign-up" element={<SignUpPage />} />
           </Route>
         )}
