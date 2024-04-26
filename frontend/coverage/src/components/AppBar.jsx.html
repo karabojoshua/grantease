@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.96% </span>
+                <span class="strong">12.71% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>28/234</span>
+                <span class='fraction'>29/228</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.96% </span>
+                <span class="strong">12.71% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>28/234</span>
+                <span class='fraction'>29/228</span>
             </div>
         
             
@@ -290,13 +290,8 @@
 <a name='L225'></a><a href='#L225'>225</a>
 <a name='L226'></a><a href='#L226'>226</a>
 <a name='L227'></a><a href='#L227'>227</a>
-<a name='L228'></a><a href='#L228'>228</a>
-<a name='L229'></a><a href='#L229'>229</a>
-<a name='L230'></a><a href='#L230'>230</a>
-<a name='L231'></a><a href='#L231'>231</a>
-<a name='L232'></a><a href='#L232'>232</a>
-<a name='L233'></a><a href='#L233'>233</a>
-<a name='L234'></a><a href='#L234'>234</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L228'></a><a href='#L228'>228</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -522,30 +517,24 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as React from 'react';
-import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
-import Badge from '@mui/material/Badge';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
+<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { UserButton } from '@clerk/clerk-react';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+import MenuIcon from '@mui/icons-material/Menu';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import SearchIcon from '@mui/icons-material/Search';
+import AppBar from '@mui/material/AppBar';
+import Badge from '@mui/material/Badge';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import InputBase from '@mui/material/InputBase';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import { alpha, styled } from '@mui/material/styles';
+import * as React from 'react';
 &nbsp;
 const Search = styled('div')(({ theme }) =&gt; ({
 <span class="cstat-no" title="statement not covered" >  position: 'relative',</span>
@@ -732,17 +721,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) =&gt; ({
 <span class="cstat-no" title="statement not covered" >                &lt;NotificationsIcon /&gt;</span>
 <span class="cstat-no" title="statement not covered" >              &lt;/Badge&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/IconButton&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;IconButton</span>
-<span class="cstat-no" title="statement not covered" >              size="large"</span>
-<span class="cstat-no" title="statement not covered" >              edge="end"</span>
-<span class="cstat-no" title="statement not covered" >              aria-label="account of current user"</span>
-<span class="cstat-no" title="statement not covered" >              aria-controls={menuId}</span>
-<span class="cstat-no" title="statement not covered" >              aria-haspopup="true"</span>
-<span class="cstat-no" title="statement not covered" >              onClick={handleProfileMenuOpen}</span>
-<span class="cstat-no" title="statement not covered" >              color="inherit"</span>
-<span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >              &lt;AccountCircle /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/IconButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >          &lt;/Box&gt;</span>
 <span class="cstat-no" title="statement not covered" >          &lt;Box sx={{ display: { xs: 'flex', md: 'none' } }}&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;IconButton</span>
@@ -756,6 +734,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) =&gt; ({
 <span class="cstat-no" title="statement not covered" >              &lt;MoreIcon /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/IconButton&gt;</span>
 <span class="cstat-no" title="statement not covered" >          &lt;/Box&gt;</span>
+<span class="cstat-no" title="statement not covered" >          &lt;UserButton </span>
+<span class="cstat-no" title="statement not covered" >            signInUrl='/sign-in'</span>
+<span class="cstat-no" title="statement not covered" >            afterSignOutUrl='/sign-in'</span>
+<span class="cstat-no" title="statement not covered" >          /&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/Toolbar&gt;</span>
 <span class="cstat-no" title="statement not covered" >      &lt;/AppBar&gt;</span>
 <span class="cstat-no" title="statement not covered" >      {renderMobileMenu}</span>
@@ -769,7 +751,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) =&gt; ({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-04-24T10:24:30.960Z
+                at 2024-04-26T05:52:46.857Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

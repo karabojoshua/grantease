@@ -2,10 +2,12 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "type": "module",
   "author": "",
@@ -16,5 +18,10 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mysql2": "^3.9.4"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^1.5.2",
+    "supertest": "^7.0.0",
+    "vitest": "^1.5.2"
   }
 }

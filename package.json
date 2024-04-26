@@ -3,17 +3,13 @@
   "version": "1.0.0",
   "description": "This project was bootstrapped with [Vite](https://vitejs.dev/) and uses [PNPM](https://pnpm.io/) as the package manager.",
   "scripts": {
-    "install": "npm i -g pnpm nodemon serve npm-run-all && cd backend && pnpm install && cd ../frontend && pnpm install",
+    "fresh-install": "npm i -g pnpm nodemon serve npm-run-all && cd backend && pnpm install && cd ../frontend && pnpm install",
+    "install": "cd backend && pnpm install && cd ../frontend && pnpm install",
     "dev": "npm-run-all --parallel backend frontend",
     "backend": "cd backend && pnpm dev",
     "frontend": "cd frontend && pnpm dev",
-    "build": "cd frontend && pnpm build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cd frontend && pnpm build"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@mui/utils": "^5.15.14",
-    "prop-types": "^15.8.1"
-  }
+  "license": "ISC"
 }
