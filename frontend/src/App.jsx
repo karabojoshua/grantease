@@ -2,7 +2,7 @@ import { UserButton, UserProfile, useAuth } from "@clerk/clerk-react";
 import { CircularProgress } from "@mui/material";
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { CenteredLayout } from "./layouts";
-import Dashboard from "./pages/admin-dashboard/Dashboard";
+import { Dashboard } from "./pages/dashboard/dashboard";
 import { SignInPage } from "./pages/sign-in/sign-in";
 import { SignUpPage } from "./pages/sign-up/sign-up";
 

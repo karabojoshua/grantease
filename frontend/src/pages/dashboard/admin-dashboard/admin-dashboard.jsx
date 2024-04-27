@@ -1,10 +1,10 @@
 //@ts-ignore
-import PrimarySearchAppBar from "../../components/AppBar";
+import PrimarySearchAppBar from "../../../components/AppBar";
 //@ts-ignore
-import DashboardTabs from "../../components/DashboardTabs";
+import DashboardTabs from "../../../components/DashboardTabs";
 import './dashboard-styles.css';
 
-function Dashboard() {
+const AdminDashboard = ()=> {
   return (
     <div>
         <PrimarySearchAppBar />
@@ -20,4 +20,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default AdminDashboard;
