@@ -10,7 +10,7 @@ vi.mock("@clerk/clerk-sdk-node", ()=>({
     }
 }))
 
-vi.mock("../db.js", ()=>({
+vi.mock("../db/index.js", ()=>({
     db: {
         query: (sql, params, callback) => {
             if (params instanceof Function) { // if no params
@@ -22,7 +22,7 @@ vi.mock("../db.js", ()=>({
             } else if (sql.includes("SELECT COUNT(*) as count FROM user")) {
                 callback(null, [{count: 0}]);
             } else if (sql.includes("INSERT INTO user SET ?")) {
-                callback(null, {id: "123", role: "admin", isBanned: 0});
+                callback(null, {id: "123", role: "admin", is_banned: 0});
             } else {
                 callback(new Error("Invalid SQL"));
             }
@@ -34,7 +34,7 @@ describe('get-user-meta', () => {
     describe('GET /user-meta', () => {
         it('it should create a new admin user if no user exists', async () => {
             const response = await supertest(app).get('/user-meta');
-            expect(response.body).toEqual({isBanned: 0, role: "admin", id: "123"});
+            expect(response.body).toEqual({role: "admin", is_banned: 0});
             expect(response.statusCode).toEqual(200);
         });
     });
