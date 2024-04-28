@@ -1,12 +1,10 @@
-//@ts-ignore
 import PrimarySearchAppBar from "../../../components/AppBar";
-//@ts-ignore
 import DashboardTabs from "../../../components/DashboardTabs";
 import './dashboard-styles.css';
 
 const AdminDashboard = ()=> {
   return (
-    <div>
+    <>
         <PrimarySearchAppBar />
         <main>
             <section className="banner-area">
@@ -16,7 +14,7 @@ const AdminDashboard = ()=> {
             <DashboardTabs />
         </main>
         
-    </div>
+    </>
   );
 }
 

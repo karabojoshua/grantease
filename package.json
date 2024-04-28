@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This project was bootstrapped with [Vite](https://vitejs.dev/) and uses [PNPM](https://pnpm.io/) as the package manager.",
   "scripts": {
-    "fresh-install": "npm i -g pnpm nodemon serve npm-run-all && cd backend && pnpm install && cd ../frontend && pnpm install",
+    "fresh-install": "npm i -g pnpm nodemon serve npm-run-all typescript && cd backend && pnpm install && cd ../frontend && pnpm install",
     "install": "cd backend && pnpm install && cd ../frontend && pnpm install",
     "dev": "npm-run-all --parallel backend frontend",
     "backend": "cd backend && pnpm dev",
