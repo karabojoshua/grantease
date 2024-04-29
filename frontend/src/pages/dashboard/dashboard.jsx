@@ -1,4 +1,3 @@
-import { UserButton } from "@clerk/clerk-react"
 import { CircularProgress } from "@mui/material"
 import { getQuery } from "../../dataprovider"
 import { CenteredLayout } from "../../layouts"
@@ -12,7 +11,7 @@ export const Dashboard = () =>{
     }
 
     return (
-        (data?.role === "admin") ? <AdminDashboard /> : <><UserButton/></>
+        (data?.role === "admin") ? <AdminDashboard /> : <AdminDashboard />
     )
 
 }
