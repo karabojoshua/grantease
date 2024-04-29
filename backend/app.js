@@ -2,7 +2,7 @@ import { ClerkExpressRequireAuth } from "@clerk/clerk-sdk-node";
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
-import { getUserMeta, superAccess } from "./routes/index.js";
+import { getApplications, getUserMeta, superAccess } from "./routes/index.js";
 
 dotenv.config({ path: '.env.local' });
 
@@ -18,6 +18,9 @@ app.get('/', ClerkExpressRequireAuth(), (req, res) => {
 
 //Route to get user meta
 app.use('/', getUserMeta);
+
+// Route to get applications
+app.use('/', getApplications);
 
 // Remove super access routes from production
 app.use('/db', superAccess);

@@ -2,6 +2,7 @@ import { UserButton, UserProfile, useAuth } from "@clerk/clerk-react";
 import { CircularProgress } from "@mui/material";
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { CenteredLayout } from "./layouts";
+import Applications from "./pages/applications/applications";
 import { Dashboard } from "./pages/dashboard/dashboard";
 import { SignInPage } from "./pages/sign-in/sign-in";
 import { SignUpPage } from "./pages/sign-up/sign-up";
@@ -22,6 +23,7 @@ function App() {
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/button" element={<UserButton />} />
             <Route path="/onboarding" element={<UserProfile />} />
+            <Route path="/applications" element={<Applications />} />
           </Route>
         )}
         {!isSignedIn && (

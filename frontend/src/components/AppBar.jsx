@@ -1,11 +1,11 @@
-import { UserButton } from '@clerk/clerk-react';
-import AccountCircle from '@mui/icons-material/AccountCircle';
+import { useClerk } from '@clerk/clerk-react';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SearchIcon from '@mui/icons-material/Search';
 import AppBar from '@mui/material/AppBar';
+import Avatar from '@mui/material/Avatar';
 import Badge from '@mui/material/Badge';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
@@ -16,6 +16,10 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { alpha, styled } from '@mui/material/styles';
 import * as React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import SideMenu from './ProfileMenu';
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -59,11 +63,25 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 export default function PrimarySearchAppBar() {
+  const { user, signOut } = useClerk();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
+  console.log(user);
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  
+  const [sideMenuUser, setSideMenuUser] = useState(null);
+
+  const handleProfileClick = (event) => {
+    setSideMenuUser({ anchorEl: event.currentTarget, ...user });
+  };
+
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    signOut();
+    navigate('/sign-in');
+  };
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -100,7 +118,7 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>My account</MenuItem> 
     </Menu>
   );
 
@@ -121,41 +139,46 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
+      <MenuItem onClick={() => navigate("/profile")}>
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            {user && user.imageUrl ? (
+              <Avatar src={user.imageUrl} alt="User Avatar" sx={{ mr: 1 }} />
+            ) : (
+              <Avatar sx={{ bgcolor: 'primary.main', color: 'primary.contrastText', mr: 1 }}>
+                <AccountCircleIcon />
+              </Avatar>
+            )}
+            <div>
+              <Typography variant="subtitle1">{user && user.fullName}</Typography>
+              {user && user.emailAddresses[0].emailAddress ? (
+                <Typography variant="body2" color="textSecondary">
+                  {user.emailAddresses[0].emailAddress}
+                </Typography>
+              ) : null}
+            </div>
+          </Box>
       </MenuItem>
       <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
+      <p>Messages</p>
+      <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+        <Badge badgeContent={4} color="error">
+          {/* No icon */}
+        </Badge>
+      </IconButton>
+    </MenuItem>
+      <MenuItem>
         <p>Notifications</p>
+        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+        <Badge badgeContent={17} color="error">
+          {/* No icon */}
+        </Badge>
+      </IconButton>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
+      <MenuItem onClick={() => {navigate("/applications"); }}>Applications</MenuItem>
+      <MenuItem onClick={handleSignOut}>Sign Out</MenuItem>
     </Menu>
   );
-
+  
   return (
     <Box sx={{ flexGrow: 1 }} component={'header'}>
       <AppBar position="static" elevation={0} className='navbar'component={'section'}>
@@ -202,6 +225,28 @@ export default function PrimarySearchAppBar() {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="profile-menu"
+              aria-haspopup="true"
+              onClick={handleProfileClick}
+              color="inherit"
+            >
+              {user && user.imageUrl ? (
+              <Avatar src={user.imageUrl} alt="User Avatar" sx={{ mr: 1 }} />
+            ) : (
+              <Avatar sx={{ bgcolor: 'primary.main', color: 'primary.contrastText', mr: 1 }}>
+                <AccountCircleIcon />
+              </Avatar>
+            )}
+            </IconButton>
+            <SideMenu
+              user={sideMenuUser}
+              onClose={() => setSideMenuUser(null)}
+              onSignOut={handleSignOut}
+
+            />
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -214,11 +259,34 @@ export default function PrimarySearchAppBar() {
             >
               <MoreIcon />
             </IconButton>
+            
           </Box>
-          <UserButton 
+          {/* <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="profile-menu"
+              aria-haspopup="true"
+              onClick={handleProfileClick}
+              color="inherit"
+            >
+              {user && user.imageUrl ? (
+              <Avatar src={user.imageUrl} alt="User Avatar" sx={{ mr: 1 }} />
+            ) : (
+              <Avatar sx={{ bgcolor: 'primary.main', color: 'primary.contrastText', mr: 1 }}>
+                <AccountCircleIcon />
+              </Avatar>
+            )}
+            </IconButton>
+          <SideMenu
+              user={sideMenuUser}
+              onClose={() => setSideMenuUser(null)}
+              onSignOut={handleSignOut}
+
+            /> */}
+          {/* <UserButton 
             signInUrl='/sign-in'
             afterSignOutUrl='/sign-in'
-          />
+          /> */}
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
