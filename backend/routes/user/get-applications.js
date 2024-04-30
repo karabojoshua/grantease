@@ -1,6 +1,6 @@
 import { ClerkExpressRequireAuth } from "@clerk/clerk-sdk-node";
 import express from "express";
-import { db } from "../db/index.js";
+import { db } from "../../db/index.js";
 const router = express.Router();
 
 
@@ -18,18 +18,5 @@ router.get("/applications", ClerkExpressRequireAuth(), (req, res) => {
     });
 });
 
-// Route to get applications by id
-// router.get("/applications/:id", ClerkExpressRequireAuth(), (req, res) => {
-//     // const id = req.auth.userId;
-//     // const id = 1;
-//     db.query("SELECT * FROM applications WHERE userId = ?", [id], (err, result) => {
-//         if (err) {
-//             console.error("Error querying database:", err);
-//             res.status(500).json({ error: "Internal Server Error" });
-//             return;
-//         }
-//         res.json(result);
-//     });
-// });
 
 export default router;

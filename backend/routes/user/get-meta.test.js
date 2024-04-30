@@ -1,6 +1,6 @@
 import supertest from 'supertest';
 import { describe, vi } from "vitest";
-import app from '../app.js';
+import app from '../../app.js';
 
 //mock to ignore the authenticator
 vi.mock("@clerk/clerk-sdk-node", ()=>({
@@ -10,7 +10,7 @@ vi.mock("@clerk/clerk-sdk-node", ()=>({
     }
 }))
 
-vi.mock("../db/index.js", ()=>({
+vi.mock("../../db/index.js", ()=>({
     db: {
         query: (sql, params, callback) => {
             if (params instanceof Function) { // if no params

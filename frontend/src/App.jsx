@@ -2,10 +2,14 @@ import { UserButton, UserProfile, useAuth } from "@clerk/clerk-react";
 import { CircularProgress } from "@mui/material";
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { CenteredLayout } from "./layouts";
-import Applications from "./pages/applications/applications";
-import { Dashboard } from "./pages/dashboard/dashboard";
+import RoleChangeRequest from "./pages/dashboard/admin/role-change-request";
+import ManageApplications from "./pages/dashboard/fund-manager/applications";
+import CreateFundingOpportunity from "./pages/dashboard/fund-manager/create-funding";
+import FundingPage from "./pages/funding-page/funding";
 import { SignInPage } from "./pages/sign-in/sign-in";
 import { SignUpPage } from "./pages/sign-up/sign-up";
+import { UserApplications } from "./pages/user-applications/applications";
+
 
 function App() {
   const { isLoaded, isSignedIn } = useAuth();
@@ -19,11 +23,15 @@ function App() {
       <Routes>
         {isSignedIn && (
           <Route element={<Outlet />}>
-            <Route path="/dashboard" element={<Dashboard/>} />
+            <Route path="/dashboard" element={<>Hello Welcome to the Dashboard</>} />
+            <Route path="/role-change-request" element={<RoleChangeRequest />} />
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/button" element={<UserButton />} />
             <Route path="/onboarding" element={<UserProfile />} />
-            <Route path="/applications" element={<Applications />} />
+            <Route path="/user-applications" element={<UserApplications/>} />
+            <Route path="/manager-applications" element={<ManageApplications/>} />
+            <Route path="/home" element={<FundingPage/>} />
+            <Route path="/create-funding" element={<CreateFundingOpportunity/>} />
           </Route>
         )}
         {!isSignedIn && (

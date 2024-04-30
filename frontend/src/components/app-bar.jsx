@@ -18,7 +18,7 @@ import { alpha, styled } from '@mui/material/styles';
 import * as React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import SideMenu from './ProfileMenu';
+import ProfileMenu from './profile-menu';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -66,14 +66,13 @@ export default function PrimarySearchAppBar() {
   const { user, signOut } = useClerk();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-  console.log(user);
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   
-  const [sideMenuUser, setSideMenuUser] = useState(null);
+  const [profileMenuUser, setProfileMenuUser] = useState(null);
 
   const handleProfileClick = (event) => {
-    setSideMenuUser({ anchorEl: event.currentTarget, ...user });
+    setProfileMenuUser({ anchorEl: event.currentTarget, ...user });
   };
 
   const navigate = useNavigate();
@@ -241,11 +240,10 @@ export default function PrimarySearchAppBar() {
               </Avatar>
             )}
             </IconButton>
-            <SideMenu
-              user={sideMenuUser}
-              onClose={() => setSideMenuUser(null)}
+            <ProfileMenu
+              user={profileMenuUser}
+              onClose={() => setProfileMenuUser(null)}
               onSignOut={handleSignOut}
-
             />
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
@@ -259,34 +257,7 @@ export default function PrimarySearchAppBar() {
             >
               <MoreIcon />
             </IconButton>
-            
           </Box>
-          {/* <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="profile-menu"
-              aria-haspopup="true"
-              onClick={handleProfileClick}
-              color="inherit"
-            >
-              {user && user.imageUrl ? (
-              <Avatar src={user.imageUrl} alt="User Avatar" sx={{ mr: 1 }} />
-            ) : (
-              <Avatar sx={{ bgcolor: 'primary.main', color: 'primary.contrastText', mr: 1 }}>
-                <AccountCircleIcon />
-              </Avatar>
-            )}
-            </IconButton>
-          <SideMenu
-              user={sideMenuUser}
-              onClose={() => setSideMenuUser(null)}
-              onSignOut={handleSignOut}
-
-            /> */}
-          {/* <UserButton 
-            signInUrl='/sign-in'
-            afterSignOutUrl='/sign-in'
-          /> */}
         </Toolbar>
       </AppBar>
       {renderMobileMenu}

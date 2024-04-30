@@ -11,7 +11,7 @@ import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import PrimarySearchAppBar from '../../components/AppBar';
+import PrimarySearchAppBar from '../../components/app-bar';
 import { getQuery } from '../../dataprovider';
 import { CenteredLayout } from '../../layouts';
 
@@ -19,10 +19,10 @@ import { CenteredLayout } from '../../layouts';
 // Define your list of applications
 // const applicationsList = [];
 
-const Applications = () => {
+export const UserApplications = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
-  const { data, isError, isLoading } = getQuery('applications');
+  const { data, isError, isLoading } = getQuery('user/applications');
   if (isLoading) {
     return <CenteredLayout extras={{ "data-testid": "loading-page" }}><CircularProgress /></CenteredLayout>
   };
@@ -96,5 +96,3 @@ const Applications = () => {
     </Box>
   );
 };
-
-export default Applications;

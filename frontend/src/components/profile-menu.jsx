@@ -6,9 +6,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Applications from '../pages/applications/applications'; // Import the Applications component
+import { UserApplications } from '../pages/user-applications/applications';
 
-export default function SideMenu({ user, onClose, onSignOut }) {
+export default function ProfileMenu({ user, onClose, onSignOut }) {
   const [applicationsOpen, setApplicationsOpen] = useState(false);
 
   const handleApplicationsClose = () => {
@@ -47,7 +47,7 @@ export default function SideMenu({ user, onClose, onSignOut }) {
             </div>
           </Box>
         </MenuItem>
-        <MenuItem onClick={() => {navigate("/applications")}}>Applications</MenuItem>
+        <MenuItem onClick={() => {navigate("/user-applications")}}>Applications</MenuItem>
         <MenuItem onClick={onSignOut}>Sign Out</MenuItem>
       </Menu>
       {/* Wrap the Applications component inside a parent element */}
@@ -58,7 +58,7 @@ export default function SideMenu({ user, onClose, onSignOut }) {
           open={applicationsOpen}
           onClose={handleApplicationsClose}
         >
-          {applicationsOpen && <Applications onClose={handleApplicationsClose} />}
+          {applicationsOpen && <UserApplications onClose={handleApplicationsClose} />}
         </Menu>
       </div>
     </div>

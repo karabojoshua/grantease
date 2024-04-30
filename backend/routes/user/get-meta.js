@@ -1,9 +1,9 @@
 import { ClerkExpressRequireAuth } from "@clerk/clerk-sdk-node";
 import express from "express";
-import { db } from "../db/index.js";
+import { db } from "../../db/index.js";
 const router = express.Router();
 
-router.get("/user-meta", ClerkExpressRequireAuth(), (req, res) => {
+router.get("/meta", ClerkExpressRequireAuth(), (req, res) => {
   const id = req.auth.userId;
   db.query("SELECT * FROM user WHERE id = ?", [id], (err, result) => {
     if (err) {
