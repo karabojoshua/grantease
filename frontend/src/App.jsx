@@ -2,6 +2,7 @@ import { UserButton, UserProfile, useAuth } from "@clerk/clerk-react";
 import { CircularProgress } from "@mui/material";
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { CenteredLayout } from "./layouts";
+import { AdminDashboard } from "./pages/dashboard/admin/dashboard";
 import RoleChangeRequest from "./pages/dashboard/admin/role-change-request";
 import ManageApplications from "./pages/dashboard/fund-manager/applications";
 import CreateFundingOpportunity from "./pages/dashboard/fund-manager/create-funding";
@@ -23,7 +24,7 @@ function App() {
       <Routes>
         {isSignedIn && (
           <Route element={<Outlet />}>
-            <Route path="/dashboard" element={<>Hello Welcome to the Dashboard</>} />
+            <Route path="/dashboard" element={<AdminDashboard/>} />
             <Route path="/role-change-request" element={<RoleChangeRequest />} />
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/button" element={<UserButton />} />
@@ -41,7 +42,7 @@ function App() {
           </Route>
         )}
 
-        <Route path="/" element={isSignedIn ? <Navigate to={"/dashboard"} /> : <Navigate to={"/sign-in"} />} />
+        <Route path="/" element={isSignedIn ? <Navigate to={"/home"} /> : <Navigate to={"/sign-in"} />} />
         <Route path="*" element={<CenteredLayout>404 Not Found</CenteredLayout>} />
       </Routes>
     </BrowserRouter>

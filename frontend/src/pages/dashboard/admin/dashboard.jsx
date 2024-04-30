@@ -13,6 +13,7 @@ export const AdminDashboard = () => {
                     <small>Welcome Back</small>
                 </section>
                 <RoleChangeRequest />
+                <h2>Manage Users</h2>
                 <ManageUsers />
                 
             </main>

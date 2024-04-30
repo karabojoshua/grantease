@@ -48,6 +48,7 @@ export default function ProfileMenu({ user, onClose, onSignOut }) {
           </Box>
         </MenuItem>
         <MenuItem onClick={() => {navigate("/user-applications")}}>Applications</MenuItem>
+        <MenuItem onClick={() => {navigate("/dashboard")}}>Dashboard</MenuItem>
         <MenuItem onClick={onSignOut}>Sign Out</MenuItem>
       </Menu>
       {/* Wrap the Applications component inside a parent element */}

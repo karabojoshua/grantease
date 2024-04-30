@@ -1,6 +1,5 @@
 import { useClerk } from '@clerk/clerk-react';
 import MailIcon from '@mui/icons-material/Mail';
-import MenuIcon from '@mui/icons-material/Menu';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SearchIcon from '@mui/icons-material/Search';
@@ -174,6 +173,7 @@ export default function PrimarySearchAppBar() {
       </IconButton>
       </MenuItem>
       <MenuItem onClick={() => {navigate("/applications"); }}>Applications</MenuItem>
+      <MenuItem onClick={() => {navigate("/dashboard"); }}>Dashboard</MenuItem>
       <MenuItem onClick={handleSignOut}>Sign Out</MenuItem>
     </Menu>
   );
@@ -182,15 +182,9 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1 }} component={'header'}>
       <AppBar position="static" elevation={0} className='navbar'component={'section'}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+          <section className='logo-area' style={{width: '2rem'}}>
+            <img src="./logo192.png" alt="website logo" srcset="" style={{width: '2rem'}}  onClick={() => {navigate("/home")}}/>
+          </section>
           <Typography
             variant="h6"
             noWrap

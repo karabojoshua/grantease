@@ -99,7 +99,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('1','Admin',0,'Unknown'),('2','Manager',0,'Unknown'),('3','User',1,'Unknown'),('4','Manager',0,'Unknown'),('user_2feQFiOlDop780ICmITQhV7ZXhF','user',0,'Unknown'),('user_2fQ0wPce315v8apZ3k95qdAQ5e1','user',0,'Unknown'),('user1','fund_manager_pending',0,'John Doe'),('user2','fund_manager_pending',0,'Jane Smith'),('user3','applicant',0,'Alice Johnson');
+INSERT INTO `user` VALUES ('1','Admin',0,'Unknown'),('2','Manager',0,'Unknown'),('3','User',1,'Unknown'),('4','Manager',1,'Unknown'),('user_2feQFiOlDop780ICmITQhV7ZXhF','user',1,'Unknown'),('user_2fQ0wPce315v8apZ3k95qdAQ5e1','user',1,'Unknown'),('user1','fund_manager_pending',1,'John Doe'),('user2','fund_manager',1,'Jane Smith'),('user3','applicant',1,'Alice Johnson');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -112,4 +112,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-30  1:30:04
+-- Dump completed on 2024-04-30 17:13:18
