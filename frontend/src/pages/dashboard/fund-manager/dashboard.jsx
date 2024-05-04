@@ -2,11 +2,11 @@ import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import PropTypes from 'prop-types';
-import React from 'react';
-import AppBar from "../../../components/app-bar";
-import ManageApplications from './applications.jsx';
+import React from "react";
+import PrimarySearchAppBar from "../../../components/app-bar";
+import ManageApplications from "./applications.jsx";
 import './fund-manager-styles.css';
-import FundManagerOverviewCards from './overview.jsx';
+import FundManagerOverviewCards from './overview';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -20,7 +20,7 @@ function CustomTabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ pt: 1 }}>
           {children}
         </Box>
       )}
@@ -41,34 +41,40 @@ function a11yProps(index) {
   };
 }
 
-export const FundManagerDashboard = () => {
-    const [value, setValue] = React.useState(0);
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
-    return (
-        <>
-            <AppBar />
-            <main style={{padding: '2rem'}}>
-                <section style={{marginBottom: '2rem'}}>
-                    <h1 style={{margin: '0', fontSize: '2.5rem'}}>Fund Manager Dashboard</h1>
-                    <p style={{fontSize: '1rem', margin:'0'}}>Welcome Back!</p>
-                </section>
-                <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                    <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                    <Tab label="Overview" {...a11yProps(0)} />
-                    <Tab label="My Funding Ads" {...a11yProps(1)} />
-                    </Tabs>
-                </Box>
-                <CustomTabPanel value={value} index={0}>
-                    <FundManagerOverviewCards/>
-                </CustomTabPanel>
-                <CustomTabPanel value={value} index={1}>
-                    <h2>Review Received Applications</h2>
-                    <ManageApplications/>
-                </CustomTabPanel>
-            </main>
-        </>
-        
-    )
+export const FundManagerDashboard = () =>{
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  return(
+    <>
+      <PrimarySearchAppBar />
+      <main>
+          <section className="page-heading-section" style={{marginBottom: '2rem'}}>
+              <h1 style={{margin: '0'}}>Fund Manager Dashboard</h1>
+              <small>Welcome Back!</small>
+          </section>
+          <Box sx={{ width: '100%' }}>
+            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+              <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+                <Tab label="Overview" {...a11yProps(0)} />
+                <Tab label="My Fund Ads" {...a11yProps(1)} />
+                <Tab label="Item Three" {...a11yProps(2)} />
+              </Tabs>
+            </Box>
+            <CustomTabPanel value={value} index={0}>
+              <FundManagerOverviewCards />
+            </CustomTabPanel>
+            <CustomTabPanel value={value} index={1}>
+              <ManageApplications />
+            </CustomTabPanel>
+            <CustomTabPanel value={value} index={2}>
+              Item Three
+            </CustomTabPanel>
+          </Box>
+          
+      </main>
+    </>
+  );
 }

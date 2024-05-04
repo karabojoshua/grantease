@@ -172,7 +172,8 @@ export default function PrimarySearchAppBar() {
         </Badge>
       </IconButton>
       </MenuItem>
-      <MenuItem onClick={() => {navigate("/applications"); }}>Applications</MenuItem>
+      <MenuItem onClick={() => {navigate("/home"); }}>Home</MenuItem>
+      <MenuItem onClick={() => {navigate("/user-applications"); }}>Applications</MenuItem>
       <MenuItem onClick={() => {navigate("/dashboard"); }}>Dashboard</MenuItem>
       <MenuItem onClick={handleSignOut}>Sign Out</MenuItem>
     </Menu>

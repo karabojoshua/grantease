@@ -4,6 +4,7 @@ import { db } from "../../db/index.js";
 const router = express.Router();
 
 router.get("/users", ClerkExpressRequireAuth(), async (req, res) => {
+    const id = req.auth.userId;
     db.query("SELECT * FROM user;", (err, result) => {
         if (err) {
             console.error(err);
