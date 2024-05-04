@@ -1,13 +1,13 @@
-import { Card, CardContent, CardHeader, Grid, Typography } from '@mui/material';
+import { CircularProgress, Grid } from '@mui/material';
 import PrimarySearchAppBar from '../../components/app-bar';
 import { getQuery } from "../../dataprovider";
+import { CenteredLayout } from '../../layouts';
 import './funding-page-styles.css';
 
 const FundingPage = () => {
     const { data, isError, isLoading } = getQuery("funding-opportunities");
-
     if (isLoading) {
-        return <div>Loading...</div>
+        return <CenteredLayout extras={{ "data-testid": "loading-page" }}><CircularProgress /></CenteredLayout>
     }
     if (isError) {
         return <div>Error</div>
@@ -16,9 +16,9 @@ const FundingPage = () => {
     return (
         <div>
             <PrimarySearchAppBar />
-            <main style={{padding: '2rem', paddingBottom: '2rem'}}>
-                <section className='HeroSection' style={{padding: '3rem'}}>
-                    <h1>Find Your Funding Here!</h1>
+            <main>
+                <section className='HeroSection'>
+                    <h1 style={{marginTop: '0'}}>Find Your Funding Here!</h1>
                     <section className='BigSearchSection'>
                         <form action="" method="post">
                             <input type="search" name="find-funding" id="find-funding" placeholder='Company or keyword' />
@@ -55,7 +55,7 @@ const FundingPage = () => {
                     ))}
                 </Grid> */}
 
-                <Grid container spacing={3}>
+                <Grid component={'section'} container spacing={3} style={{marginTop: '1rem'}}>
                 {data.map(fund => (
                     <Grid item key={fund.id} xs={12} sm={6} md={4}>
                         <article className="card">
