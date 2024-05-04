@@ -21,7 +21,7 @@ function transformData(data) {
 export default function RoleChangeRequest() {
   const { data: result, isLoading, isError } = getQuery("admin/pending-managers");
 
-  const { mutate: updateIds} = updateManyMutation("admin/update-roles",["admin/pending-managers"])
+  const { mutate: updateIds} = updateManyMutation({resource:"admin/update-roles",invalidateKeys:["admin/pending-managers"]})
 
   const handleStatusChange = (selected, status) => {
       const newRole = status === "approve" ? "fund_manager" : "user";

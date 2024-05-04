@@ -1,4 +1,4 @@
-import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow } from '@mui/material';
+import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow } from '@mui/material';
 import { useState } from 'react';
 import { getQuery, updateMutation } from "../../../dataprovider";
 
@@ -7,8 +7,11 @@ export default function ManageUsers() {
   const userData = data ?? [];
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5); // Change this as needed
-  const {mutate: toggleBan} = updateMutation("admin/toggle-ban-many", ["admin/users"]);
-
+  const {mutate: toggleBan} = updateMutation({
+    resource: "admin/toggle-ban-many",
+    invalidateKeys:["admin/users"]
+  });
+  
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -22,6 +25,11 @@ export default function ManageUsers() {
     <>
       {isLoading && <p>Loading...</p>}
       {isError && <p>Error</p>}
+      <Paper sx={{
+          padding: "1rem",
+          marginBottom: "1rem",
+        }}>
+        <h2>Manage Users</h2>
       <TableContainer>
         <Table>
           <TableHead>
@@ -60,6 +68,7 @@ export default function ManageUsers() {
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </TableContainer>
+      </Paper>
     </>
   );
 }

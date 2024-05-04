@@ -22,7 +22,7 @@ function transformData(data) {
   export default function ManageApplications() {
     const { data: result, isLoading, isError } = getQuery("manager/applications");
   
-    const { mutate: updateIds} = updateManyMutation("manager/update-applications",["manager/applications"])
+    const { mutate: updateIds} = updateManyMutation({resource: "manager/update-applications",invalidateKeys: ["manager/applications"]})
   
     const handleStatusChange = (selected, status) => {
         const newStatus = status === "approve" ? "Approved" : "Rejected";

@@ -1,12 +1,10 @@
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
-import PropTypes from 'prop-types';
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
 import React from "react";
-import PrimarySearchAppBar from "../../../components/app-bar";
 import ManageApplications from "./applications.jsx";
-import './fund-manager-styles.css';
-import FundManagerOverviewCards from './overview';
+import "./fund-manager-styles.css";
+import FundManagerOverviewCards from "./overview";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -19,58 +17,51 @@ function CustomTabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ pt: 1 }}>
-          {children}
-        </Box>
-      )}
+      {value === index && <Box sx={{ pt: 1 }}>{children}</Box>}
     </div>
   );
 }
 
-CustomTabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
-
 function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
   };
 }
 
-export const FundManagerDashboard = () =>{
+export const FundManagerDashboard = () => {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  return(
+  return (
     <>
-      <PrimarySearchAppBar />
-      <main>
-          <section className="page-heading-section" style={{marginBottom: '2rem'}}>
-              <h1 style={{margin: '0'}}>Fund Manager Dashboard</h1>
-              <small>Welcome Back!</small>
-          </section>
-          <Box sx={{ width: '100%' }}>
-            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-              <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                <Tab label="Overview" {...a11yProps(0)} />
-                <Tab label="My Fund Ads" {...a11yProps(1)} />
-              </Tabs>
-            </Box>
-            <CustomTabPanel value={value} index={0}>
-              <FundManagerOverviewCards />
-            </CustomTabPanel>
-            <CustomTabPanel value={value} index={1}>
-              <ManageApplications />
-            </CustomTabPanel>
-          </Box>
-          
-      </main>
+      <section
+        className="page-heading-section"
+        style={{ marginBottom: "2rem" }}
+      >
+        <h1 style={{ margin: "0" }}>Fund Manager Dashboard</h1>
+        <small>Welcome Back!</small>
+      </section>
+      <Box sx={{ width: "100%" }}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            aria-label="basic tabs example"
+          >
+            <Tab label="Overview" {...a11yProps(0)} />
+            <Tab label="My Fund Ads" {...a11yProps(1)} />
+          </Tabs>
+        </Box>
+        <CustomTabPanel value={value} index={0}>
+          <FundManagerOverviewCards />
+        </CustomTabPanel>
+        <CustomTabPanel value={value} index={1}>
+          <ManageApplications />
+        </CustomTabPanel>
+      </Box>
     </>
   );
-}
+};

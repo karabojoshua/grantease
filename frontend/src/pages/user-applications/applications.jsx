@@ -1,35 +1,19 @@
-import { CircularProgress } from '@mui/material';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TablePagination from '@mui/material/TablePagination'; // Import TablePagination
-import TableRow from '@mui/material/TableRow';
-import Typography from '@mui/material/Typography';
+import { Box, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import { Navigate } from 'react-router-dom';
-import PrimarySearchAppBar from '../../components/app-bar';
 import { getQuery } from '../../dataprovider';
-import { CenteredLayout } from '../../layouts';
-
-
-// Define your list of applications
-// const applicationsList = [];
+import ErrorPage from '../error-page';
+import { LoadingPage } from '../loading-page';
 
 export const UserApplications = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const { data, isError, isLoading } = getQuery('user/applications');
   if (isLoading) {
-    return <CenteredLayout extras={{ "data-testid": "loading-page" }}><CircularProgress /></CenteredLayout>
+    return <LoadingPage/>
   };
   if (isError) {
-    Navigate("/error");
+    return <ErrorPage/>
   };
-  // const {user} = useClerk();
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -41,8 +25,6 @@ export const UserApplications = () => {
   };
 
   return (
-    <Box>
-      <PrimarySearchAppBar />
       <Box
         display="flex"
         justifyContent="center"
@@ -93,6 +75,5 @@ export const UserApplications = () => {
           />
         </Paper>
       </Box>
-    </Box>
   );
 };

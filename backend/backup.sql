@@ -61,10 +61,11 @@ CREATE TABLE `funding_opportunities` (
   `start_date` date DEFAULT NULL,
   `end_date` date DEFAULT NULL,
   `manager_id` varchar(36) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `manager_id` (`manager_id`),
   CONSTRAINT `funding_opportunities_ibfk_1` FOREIGN KEY (`manager_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +74,7 @@ CREATE TABLE `funding_opportunities` (
 
 LOCK TABLES `funding_opportunities` WRITE;
 /*!40000 ALTER TABLE `funding_opportunities` DISABLE KEYS */;
-INSERT INTO `funding_opportunities` VALUES (1,'Research Grant','Funding for research projects in various fields.',50000.00,'2024-05-31','2024-06-15','2024-07-15','user1'),(2,'Scholarship Program','Funding for students pursuing higher education.',100000.00,'2024-06-30','2024-07-01','2024-09-01','user1'),(3,'Community Development Fund','Funding for community projects and initiatives.',75000.00,'2024-06-15','2024-07-01','2024-08-15','user1'),(4,'Arts Grant','Funding for arts and cultural projects.',60000.00,'2024-07-31','2024-08-15','2024-09-01','user2'),(5,'Environmental Conservation Fund','Funding for environmental conservation efforts.',80000.00,'2024-08-31','2024-09-15','2024-10-01','user3');
+INSERT INTO `funding_opportunities` VALUES (1,'Research Grant','Funding for research projects in various fields.',50000.00,'2024-05-31','2024-06-15','2024-07-15','user1',NULL),(2,'Scholarship Program','Funding for students pursuing higher education.',100000.00,'2024-06-30','2024-07-01','2024-09-01','user1',NULL),(3,'Community Development Fund','Funding for community projects and initiatives.',75000.00,'2024-06-15','2024-07-01','2024-08-15','user1',NULL),(4,'Arts Grant','Funding for arts and cultural projects.',60000.00,'2024-07-31','2024-08-15','2024-09-01','user2',NULL),(5,'Environmental Conservation Fund','Funding for environmental conservation efforts.',80000.00,'2024-08-31','2024-09-15','2024-10-01','user3',NULL);
 /*!40000 ALTER TABLE `funding_opportunities` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -99,7 +100,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('1','Admin',0,'Unknown'),('2','Manager',0,'Unknown'),('3','User',1,'Unknown'),('4','Manager',1,'Unknown'),('user_2feQFiOlDop780ICmITQhV7ZXhF','user',1,'Unknown'),('user_2fQ0wPce315v8apZ3k95qdAQ5e1','user',1,'Unknown'),('user1','fund_manager_pending',1,'John Doe'),('user2','fund_manager',1,'Jane Smith'),('user3','applicant',1,'Alice Johnson');
+INSERT INTO `user` VALUES ('1','Admin',0,'Unknown'),('2','Manager',0,'Unknown'),('3','User',1,'Unknown'),('4','Manager',0,'Unknown'),('user_2feQFiOlDop780ICmITQhV7ZXhF','user',1,'Unknown'),('user_2fQ0wPce315v8apZ3k95qdAQ5e1','user',1,'Unknown'),('user1','fund_manager_pending',1,'John Doe'),('user2','fund_manager',1,'Jane Smith'),('user3','applicant',1,'Alice Johnson');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -112,4 +113,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-30 17:13:18
+-- Dump completed on 2024-05-04  9:08:58

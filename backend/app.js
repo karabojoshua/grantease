@@ -8,9 +8,13 @@ dotenv.config({ path: '.env.local' });
 
 const app = express();
 
-// Middleware to parse JSON request bodies
+// Middleware for parsing JSON and urlencoded data
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+
+// Serving images
+app.use('/uploads/funding_opportunities/', express.static('uploads/funding_opportunities/'));
 
 app.get('/', ClerkExpressRequireAuth(), (req, res) => {
   res.json({ message: "Welcome, you're authenticated!" })

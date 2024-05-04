@@ -2,7 +2,13 @@ import { useAuth } from "@clerk/clerk-react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { baseUrl } from ".";
 
-export const deleteMutation = (resource: string, invalidateKeys?: string[]) => {
+export const deleteMutation = ({
+  resource,
+  invalidateKeys,
+ }: {
+  resource: string;
+  invalidateKeys?: string[];
+ }) => {
   const { getToken } = useAuth();
   const queryClient = useQueryClient();
 

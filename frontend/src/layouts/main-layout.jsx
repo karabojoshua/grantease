@@ -1,4 +1,10 @@
+import PrimarySearchAppBar from "../components/app-bar";
 
 export const MainLayout = ({ children }) => {
-  return <div className="main-layout">{children}</div>;
+  return (
+    <>
+    <PrimarySearchAppBar/>
+    <main>{children}</main>
+    </>
+  )
 };

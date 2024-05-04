@@ -1,20 +1,19 @@
 import {
-    Box,
-    Button,
-    Checkbox,
-    FormControlLabel,
-    Paper,
-    Stack,
-    Switch,
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
-    TablePagination,
-    TableRow,
-    Toolbar,
-    Typography
+  Button,
+  Checkbox,
+  FormControlLabel,
+  Paper,
+  Stack,
+  Switch,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TablePagination,
+  TableRow,
+  Toolbar,
+  Typography
 } from '@mui/material';
 import { useState } from 'react';
   
@@ -70,7 +69,7 @@ import { useState } from 'react';
     };
   
     return (
-      <Box sx={{ width: '100%' }}>
+      <>
         <Paper sx={{ width: '100%', mb: 2 }}>
           <Toolbar >
             {selected.length > 0 ? (
@@ -179,7 +178,7 @@ import { useState } from 'react';
           control={<Switch checked={dense} onChange={handleChangeDense} />}
           label="Dense padding"
         />
-      </Box>
+      </>
     );
   };
   

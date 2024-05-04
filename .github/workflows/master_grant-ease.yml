@@ -55,7 +55,6 @@ jobs:
       - name: Unzip artifact for deployment
         run: |
           unzip release.zip
-          mv ./backend/* ./
         
       
       - name: Login to Azure
@@ -71,5 +70,5 @@ jobs:
         with:
           app-name: 'grant-ease'
           slot-name: 'Production'
-          package: .
+          package: backend
           
