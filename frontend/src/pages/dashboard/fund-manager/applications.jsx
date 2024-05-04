@@ -35,7 +35,7 @@ function transformData(data) {
         {isLoading && <p>Loading...</p>}
         {isError && <p>Error</p>}
         <StatusChangeTable
-          title="Manager Applications"
+          title="Manage Applications"
           data={data}
           headers={["Full Name", "Status"]}
           handleStatusChange={handleStatusChange}

@@ -4,8 +4,9 @@ import Tabs from '@mui/material/Tabs';
 import PropTypes from 'prop-types';
 import React from 'react';
 import AppBar from "../../../components/app-bar";
-import ManageUsers from "./manage-users";
-import RoleChangeRequest from "./role-change-request";
+import ManageApplications from './applications.jsx';
+import './fund-manager-styles.css';
+import FundManagerOverviewCards from './overview.jsx';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -40,7 +41,7 @@ function a11yProps(index) {
   };
 }
 
-export const AdminDashboard = () => {
+export const FundManagerDashboard = () => {
     const [value, setValue] = React.useState(0);
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -50,27 +51,22 @@ export const AdminDashboard = () => {
             <AppBar />
             <main style={{padding: '2rem'}}>
                 <section style={{marginBottom: '2rem'}}>
-                    <h1 style={{margin: '0', fontSize: '2.5rem'}}>Admin Dashboard</h1>
+                    <h1 style={{margin: '0', fontSize: '2.5rem'}}>Fund Manager Dashboard</h1>
                     <p style={{fontSize: '1rem', margin:'0'}}>Welcome Back!</p>
                 </section>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                    <Tab label="Manager Users" {...a11yProps(0)} />
-                    <Tab label="New Fund Managers" {...a11yProps(1)} />
+                    <Tab label="Overview" {...a11yProps(0)} />
+                    <Tab label="My Funding Ads" {...a11yProps(1)} />
                     </Tabs>
                 </Box>
                 <CustomTabPanel value={value} index={0}>
-                    <h2>Manage Users</h2>
-                    <ManageUsers />
+                    <FundManagerOverviewCards/>
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={1}>
-                    <RoleChangeRequest />
+                    <h2>Review Received Applications</h2>
+                    <ManageApplications/>
                 </CustomTabPanel>
-
-                
-                
-                
-                
             </main>
         </>
         

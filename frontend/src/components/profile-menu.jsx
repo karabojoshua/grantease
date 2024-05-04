@@ -47,6 +47,7 @@ export default function ProfileMenu({ user, onClose, onSignOut }) {
             </div>
           </Box>
         </MenuItem>
+        <MenuItem onClick={() => {navigate("/home")}}>Home</MenuItem>
         <MenuItem onClick={() => {navigate("/user-applications")}}>Applications</MenuItem>
         <MenuItem onClick={() => {navigate("/dashboard")}}>Dashboard</MenuItem>
         <MenuItem onClick={onSignOut}>Sign Out</MenuItem>
