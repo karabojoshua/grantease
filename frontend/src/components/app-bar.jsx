@@ -172,7 +172,8 @@ export default function PrimarySearchAppBar() {
         </Badge>
       </IconButton>
       </MenuItem>
-      <MenuItem onClick={() => {navigate("/applications"); }}>Applications</MenuItem>
+      <MenuItem onClick={() => {navigate("/home"); }}>Home</MenuItem>
+      <MenuItem onClick={() => {navigate("/user-applications"); }}>Applications</MenuItem>
       <MenuItem onClick={() => {navigate("/dashboard"); }}>Dashboard</MenuItem>
       <MenuItem onClick={handleSignOut}>Sign Out</MenuItem>
     </Menu>
@@ -183,7 +184,7 @@ export default function PrimarySearchAppBar() {
       <AppBar position="static" elevation={0} className='navbar'component={'section'}>
         <Toolbar>
           <section className='logo-area' style={{width: '2rem'}}>
-            <img src="./logo192.png" alt="website logo" srcset="" style={{width: '2rem'}}  onClick={() => {navigate("/home")}}/>
+            <img src="./logo192.png" alt="website logo" style={{width: '2rem'}}  onClick={() => {navigate("/home")}}/>
           </section>
           <Typography
             variant="h6"

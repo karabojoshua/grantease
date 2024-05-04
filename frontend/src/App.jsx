@@ -4,8 +4,9 @@ import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router-dom
 import { CenteredLayout } from "./layouts";
 import { AdminDashboard } from "./pages/dashboard/admin/dashboard";
 import RoleChangeRequest from "./pages/dashboard/admin/role-change-request";
-import ManageApplications from "./pages/dashboard/fund-manager/applications";
+import { Dashboard } from "./pages/dashboard/dashboard-router";
 import CreateFundingOpportunity from "./pages/dashboard/fund-manager/create-funding";
+import { FundManagerDashboard } from "./pages/dashboard/fund-manager/dashboard";
 import FundingPage from "./pages/funding-page/funding";
 import { SignInPage } from "./pages/sign-in/sign-in";
 import { SignUpPage } from "./pages/sign-up/sign-up";
@@ -24,13 +25,14 @@ function App() {
       <Routes>
         {isSignedIn && (
           <Route element={<Outlet />}>
-            <Route path="/dashboard" element={<AdminDashboard/>} />
+            <Route path="/dashboard" element={<Dashboard/>} />
             <Route path="/role-change-request" element={<RoleChangeRequest />} />
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/button" element={<UserButton />} />
             <Route path="/onboarding" element={<UserProfile />} />
             <Route path="/user-applications" element={<UserApplications/>} />
-            <Route path="/manager-applications" element={<ManageApplications/>} />
+            <Route path="/fund-manager-dashboard" element={<FundManagerDashboard/>} />
+            <Route path="/admin-dashboard" element={<AdminDashboard/>} />
             <Route path="/home" element={<FundingPage/>} />
             <Route path="/create-funding" element={<CreateFundingOpportunity/>} />
           </Route>

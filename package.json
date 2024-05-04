@@ -11,5 +11,12 @@
     "build": "cd frontend && pnpm build"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@mui/lab": "5.0.0-alpha.170",
+    "pnpm": "^9.0.6"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
 }

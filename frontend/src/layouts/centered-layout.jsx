@@ -4,6 +4,7 @@ export const CenteredLayout = ({ children, extras }) => {
     className="centered-layout"
     style={{
       display: "flex",
+      backgroundImage: 'url("./subtle-prism.svg")',
       justifyContent: "center",
       alignItems: "center",
       height: "100vh",

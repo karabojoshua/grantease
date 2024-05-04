@@ -38,6 +38,32 @@ router.get("/applications", ClerkExpressRequireAuth(), (req, res) => {
 });
 
 
+router.get("/applications", ClerkExpressRequireAuth(), (req, res) => {
+  const id = req.auth.userId;
+  // const id = "user1";
+  db.query(
+    `
+    SELECT fa.*, u.full_name
+    FROM funding_applications fa
+    JOIN funding_opportunities fo ON fa.fund_id = fo.id
+    JOIN user u ON fa.applicant_id = u.id
+    WHERE fo.manager_id = ? 
+    AND fa.status = 'Pending';
+
+    `,
+    [id],
+    (err, result) => {
+      if (err) {
+        console.error("Error querying database:", err);
+        res.status(500).json({ error: "Internal Server Error" });
+        return;
+      }
+      res.json(result);
+    }
+  );
+});
+
+
 router.post("/update-applications", ClerkExpressRequireAuth(), async (req, res) => {
   const { ids, newStatus } = req.body;
 
