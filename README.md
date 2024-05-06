@@ -1,17 +1,17 @@
+[![codecov](https://codecov.io/gh/TheNumbered/grant-ease/graph/badge.svg?token=DI4459MDBF)](https://codecov.io/gh/TheNumbered/grant-ease)
+<img src="https://codecov.io/gh/TheNumbered/grant-ease/graphs/icicle.svg?token=DI4459MDBF"/>
 # GRANT EASE
 ## SD Project 2024
 
-This project was bootstrapped with [Vite](https://vitejs.dev/) and uses [PNPM](https://pnpm.io/) as the package manager.
-- To install global dependancies:
-    ```shell
-    npm i -g pnpm nodemon serve npm-run-all
-    ```
+This project is a fullstack application for Grant Ease, a platform for grant applications.
 
 ## Getting Started
 
 ### Prerequisites
 
-Make sure you have [Node.js](https://nodejs.org/) and [PNPM](https://pnpm.io/) installed on your machine.
+Make sure you have the following software installed on your machine:
+- [Node.js](https://nodejs.org/)
+- [PNPM](https://pnpm.io/)
 
 ### Installation
 
@@ -25,9 +25,43 @@ Make sure you have [Node.js](https://nodejs.org/) and [PNPM](https://pnpm.io/) i
     cd grant-ease
     ```
 
-3. Install the dependencies using PNPM.
+3. Install the global dependencies.
     ```shell
-    pnpm install
+    npm run install-global-dep
     ```
 
-* Some file have hidden, to show these files navigate to ``` .vscode/settings.json ``` and comment out the file you want to show
+4. Install the dependencies for each module.
+    ```shell
+    npm run install-each
+    ```
+
+## Usage
+
+- To start the backend server, run the following command:
+    ```shell
+    npm run backend
+    ```
+
+- To start the frontend development server, run the following command:
+    ```shell
+    npm run frontend
+    ```
+
+- To build the frontend for production, run the following command:
+    ```shell
+    npm run build
+    ```
+
+## Testing
+
+- To run tests, use the following command:
+    ```shell
+    npm run test
+    ```
+
+- To generate test coverage report, use the following command:
+    ```shell
+    npm run coverage
+    ```
+
+*Note: Some files are hidden by default. To show these files, navigate to `.vscode/settings.json` and comment out the file you want to show.*
