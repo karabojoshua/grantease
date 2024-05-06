@@ -1,4 +1,6 @@
 [![codecov](https://codecov.io/gh/TheNumbered/grant-ease/graph/badge.svg?token=DI4459MDBF)](https://codecov.io/gh/TheNumbered/grant-ease)
+<br/>
+## Code Coverage Graph
 <img src="https://codecov.io/gh/TheNumbered/grant-ease/graphs/icicle.svg?token=DI4459MDBF"/>
 # GRANT EASE
 ## SD Project 2024
