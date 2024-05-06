@@ -8,7 +8,7 @@ export default function ManageUsers() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5); // Change this as needed
   const {mutate: toggleBan} = updateMutation({
-    resource: "admin/toggle-ban-many",
+    resource: "admin/toggle-ban",
     invalidateKeys:["admin/users"]
   });
   

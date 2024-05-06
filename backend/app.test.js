@@ -33,5 +33,10 @@ describe('app', () => {
             expect(response.statusCode).toEqual(401);
         });
     });
+    it('should return nothing when a bad route is entered', async () => {
+        const response = await supertest(app).get('/bad-route');
+        expect(response.body).toEqual({});
+        expect(response.statusCode).toEqual(404);
+    });
 
 });

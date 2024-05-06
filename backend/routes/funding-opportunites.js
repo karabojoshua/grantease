@@ -1,16 +1,26 @@
+import { ClerkExpressRequireAuth } from "@clerk/clerk-sdk-node";
 import express from "express";
 import { db } from "../db/index.js";
 const router = express.Router();
 
-router.get("/funding-opportunities", (req, res) => {
-    db.query("SELECT * FROM funding_opportunities", (err, result) => {
-        if (err) {
-            console.error("Error querying database:", err);
-            res.status(500).json({ error: "Internal Server Error" });
-            return;
+router.get("/funding-opportunities", ClerkExpressRequireAuth() , (req, res) => {
+    const applicant_id = req.auth.userId;
+    
+    db.query(
+        `SELECT fo.*, 
+            (SELECT status 
+            FROM funding_applications fa 
+            WHERE fa.fund_id = fo.id AND fa.applicant_id = ?) AS application_status
+        FROM funding_opportunities fo 
+        WHERE fo.deadline >= CURDATE();`, [applicant_id], (err, result) => {
+            if (err) {
+                console.error("Error querying database:", err);
+                res.status(500).json({ error: "Internal Server Error" });
+                return;
+            }
+            res.json(result);
         }
-        res.json(result);
-    });
+    );
 });
 
 

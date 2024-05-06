@@ -4,7 +4,6 @@ import { db } from "../../db/index.js";
 const router = express.Router();
 
 router.get("/users", ClerkExpressRequireAuth(), async (req, res) => {
-    const id = req.auth.userId;
     db.query("SELECT * FROM user;", (err, result) => {
         if (err) {
             console.error(err);
@@ -26,7 +25,7 @@ router.get("/pending-managers", ClerkExpressRequireAuth(), async (req, res) => {
     });
 });
 
-router.put("/toggle-ban-many/:id", async (req, res) => {
+router.put("/toggle-ban/:id", async (req, res) => {
     db.query("UPDATE user SET is_banned = ? WHERE id = ?", [req.body.is_banned, req.params.id], (err, result) => {
         if (err) {
             console.error(err);

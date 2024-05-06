@@ -2,7 +2,7 @@ import { ClerkExpressRequireAuth } from "@clerk/clerk-sdk-node";
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
-import { createFundingOpportunities, fundingOpportunities, getUserMeta, managerApplications, pendingManagers, superAccess, userGetApplications } from "./routes/index.js";
+import { adminManagerUsers, createFundingOpportunities, fundingOpportunities, getUserMeta, managerApplications, superAccess, userApplications } from "./routes/index.js";
 
 dotenv.config({ path: '.env.local' });
 
@@ -32,11 +32,11 @@ app.use('/manager', managerApplications);
 app.use('/manager', createFundingOpportunities);
 
 // User routes
-app.use('/user', userGetApplications);
+app.use('/user', userApplications);
 app.use('/user', getUserMeta);
 
 // Admin routes
-app.use('/admin', pendingManagers);
+app.use('/admin', adminManagerUsers);
 
 
 // Error handling middleware

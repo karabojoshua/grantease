@@ -1,7 +1,7 @@
 import { ClerkExpressRequireAuth } from "@clerk/clerk-sdk-node";
 import express from "express";
 import fs from 'fs';
-import multer from 'multer';
+import multer, { diskStorage } from 'multer';
 import path from 'path';
 import { db } from "../../db/index.js";
 
@@ -12,7 +12,7 @@ const toUnderScoreNotation = (str) => {
 }
 
 // Multer storage configuration
-const storage = multer.diskStorage({
+const storage = diskStorage({
     destination: (req, file, cb) => {
         const dir = `uploads/funding_opportunities/${toUnderScoreNotation(req.body.title)}`;
         fs.mkdirSync(dir, { recursive: true });

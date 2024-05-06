@@ -1,10 +1,14 @@
 import { Grid } from "@mui/material";
-import { getQuery } from "../../dataprovider";
+import { createMutation, getQuery } from "../../dataprovider";
 import { LoadingPage } from "../loading-page";
 import "./funding-page-styles.css";
 
 const FundingPage = () => {
   const { data, isError, isLoading } = getQuery("funding-opportunities");
+  const { mutate: applyForFunding } = createMutation({
+    resource: "user/applications",
+    invalidateKeys: ["funding-opportunities"],
+  });
   if (isLoading) {
     return <LoadingPage />;
   }
@@ -84,7 +88,26 @@ const FundingPage = () => {
                 <p>{fund.description}</p>
               </section>
               <section className="card-footer">
-                <input className="btn" type="submit" value="Apply" />
+                {fund.application_status === "Pending" ? (
+                  <button className="btn-disabled" disabled>
+                    Application Pending
+                  </button>
+                ) : fund.application_status === "Approved" ? (
+                  <button className="btn-disabled" disabled>
+                    Application Approved
+                  </button>
+                ) : fund.application_status === "Rejected" ? (
+                  <button className="btn-disabled" disabled>
+                    Application Rejected
+                  </button>
+                ) : (
+                  <input
+                    className="btn"
+                    type="submit"
+                    value="Apply"
+                    onClick={() => applyForFunding({ fund_id: fund.id })}
+                  />
+                )}
               </section>
             </article>
           </Grid>

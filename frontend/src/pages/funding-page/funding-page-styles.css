@@ -43,6 +43,10 @@
     border-radius: 2rem;
     padding: 2.5rem;
     background: #fff;
+    height: 20rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     border: 1px solid #ffd661;
 }
 
@@ -56,6 +60,20 @@
     background: #095f59;
     border-radius: 0.3rem;
     color: #fff;
+}
+
+.card .card-footer .btn:hover{
+    background: #095f59;
+    opacity: 0.8;
+}
+
+.card .card-footer .btn-disabled{
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #095f59;
+    border-radius: 0.3rem;
+    color: #fff;
+    opacity: 0.5;
 }
 
 main {
