@@ -2,7 +2,7 @@ import { ClerkExpressRequireAuth } from "@clerk/clerk-sdk-node";
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
-import { adminManagerUsers, createFundingOpportunities, fundingOpportunities, getUserMeta, managerApplications, superAccess, userApplications } from "./routes/index.js";
+import { adminManagerUsers, createFundingOpportunities, fundingOpportunities, getUserMeta, managerApplications, userApplications } from "./routes/index.js";
 
 dotenv.config({ path: '.env.local' });
 
@@ -23,9 +23,6 @@ app.get('/', ClerkExpressRequireAuth(), (req, res) => {
 
 // Funding opportunities routes
 app.use("/", fundingOpportunities);
-
-// Remove super access routes from production
-app.use('/db', superAccess);
 
 // Manager routes
 app.use('/manager', managerApplications);

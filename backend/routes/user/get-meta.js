@@ -5,7 +5,9 @@ const router = express.Router();
 
 router.get("/meta", ClerkExpressRequireAuth(), (req, res) => {
   const id = req.auth.userId;
-  console.log("id", id);
+  const full_name = req.auth.userFullName;
+  
+  
   db.query("SELECT * FROM user WHERE id = ?", [id], (err, result) => {
     if (err) {
       console.error("Error querying database:", err);
@@ -25,14 +27,14 @@ router.get("/meta", ClerkExpressRequireAuth(), (req, res) => {
         const role = countResult[0].count === 0 ? "admin" : "user";
         db.query(
           "INSERT INTO user SET ?",
-          { id, role },
+          { id, role, full_name },
           (err, insertResult) => {
             if (err) {
               console.error("Error inserting into database:", err);
               res.status(500).json({ error: "Internal Server Error" });
               return;
             }
-            res.json({ id, role, is_banned: 0 });
+            res.json({ id, role, is_banned: 0, full_name });
           }
         );
       });

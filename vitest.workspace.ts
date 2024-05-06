@@ -11,6 +11,7 @@ export default defineWorkspace([
       environment: 'jsdom'
     }
   },
+  
   {
     test: {
       globals: true,

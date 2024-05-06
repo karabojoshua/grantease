@@ -5,7 +5,7 @@ import app from '../../app.js';
 //mock to ignore the authenticator
 vi.mock("@clerk/clerk-sdk-node", ()=>({
     ClerkExpressRequireAuth: () => (req, res, next) => {
-        req.auth = {id: "123"};
+        req.auth = {id: "123", userFullName: "John Doe"};
         next();
     }
 }))
@@ -24,7 +24,7 @@ vi.mock("mysql2", ()=>({
                 } else if (sql.includes("SELECT COUNT(*) as count FROM user")) {
                     callback(null, [{count: 0}]);
                 } else if (sql.includes("INSERT INTO user SET ?")) {
-                    callback(null, {id: "123", role: "admin", is_banned: 0});
+                    callback(null, { role: "admin", is_banned: 0, full_name: "John Doe"});
                 } else {
                     callback(new Error("Invalid SQL"));
                 }
@@ -32,13 +32,13 @@ vi.mock("mysql2", ()=>({
         })
 }}));
 
-describe('get-user-meta', () => {
-    describe('GET /user-meta', () => {
-        it('it should create a new admin user if no user exists', async () => {
-            const response = await supertest(app).get('/user-meta');
-            expect(true).toEqual(true);
-        });
-    });
-});
+describe("GET /user/meta", ()=>{
+    it("should return the meta data of the user", async ()=>{
+        const response = await supertest(app)
+            .get("/user/meta")
+            .set("Authorization", "Bearer token")
+            .expect(200);
+        expect(response.body).toEqual({role: "admin", is_banned: 0, full_name: "John Doe"});
+    })})
 
 

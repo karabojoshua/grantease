@@ -32,9 +32,7 @@ vi.mock("mysql2", () => ({
         } else if (sql.includes("INSERT INTO funding_applications")) {
           callback(null, { affectedRows: 1 });
         } else if (sql.includes("SELECT * FROM funding_applications")) {
-          callback(null, [
-            { id: 1, fund_id: 1, applicant_id: "123", status: "Pending" },
-          ]);
+          callback(null, []);
         } else {
           callback(new Error("Invalid SQL query"));
         }
@@ -63,12 +61,12 @@ describe("GET /user/applications", () => {
 describe("POST /user/applications", () => {
     it("should return a success message", async () => {
         const res = await supertest(app).post("/user/applications").send({
-        fund_id: 1,
+        fund_id: 1, 
         applicant_id: "123",
         status: "Pending",
         });
     
-        expect(res.body).toEqual({ error: "Application already exists for this fund" });
+        expect(res.body).toEqual({ message: "Application submitted successfully" });
     });
     }
 );
