@@ -20,8 +20,12 @@ vi.mock('@clerk/clerk-react', () => {
 
 
 describe("App", () => {
-    it("it renders sign in page when user is not signed in", () => {
-        render(<App/>);
-        expect(screen.getByText("Sign In")).toBeDefined();
+    it("it should render loading page when isLoaded is false", () => {
+        render(<App/>); 
+        expect(screen.getAllByTestId("loading-page")).toBeDefined();
+    });
+    it("it should render sign in page when isSignedIn is false", () => {
+        render(<App/>); 
+        expect(screen.getByTestId("sign-in")).toBeDefined();
     });
 });

@@ -1,22 +1,50 @@
 {
   "name": "grant-ease",
   "version": "1.0.0",
-  "description": "This project was bootstrapped with [Vite](https://vitejs.dev/) and uses [PNPM](https://pnpm.io/) as the package manager.",
+  "type": "module",
+  "description": "This is a fullstack project for Grant Ease, a platform for grant applications.",
   "scripts": {
-    "fresh-install": "npm i -g pnpm nodemon serve npm-run-all typescript && cd backend && pnpm install && cd ../frontend && pnpm install",
-    "install": "cd backend && pnpm install && cd ../frontend && pnpm install",
-    "dev": "npm-run-all --parallel backend frontend",
-    "backend": "cd backend && pnpm dev",
-    "frontend": "cd frontend && pnpm dev",
-    "build": "cd frontend && pnpm build"
+    "install-global-dep": "npm i -g pnpm nodemon serve",
+    "install-each": "cd backend && pnpm i && cd ../frontend && pnpm i",
+    "backend": "cd backend && nodemon server.js",
+    "frontend": "cd frontend && vite",
+    "build": "cd frontend && vite build",
+    "test": "vitest",
+		"coverage" : "vitest --coverage"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@mui/lab": "5.0.0-alpha.170",
-    "pnpm": "^9.0.6"
+    "@clerk/clerk-react": "^4.30.10",
+    "@clerk/clerk-sdk-node": "^4.13.14",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.16",
+    "@mui/material": "^5.15.16",
+    "@mui/utils": "^5.15.14",
+    "@mui/x-charts": "^7.3.2",
+    "@tanstack/react-query": "^5.34.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "multer": "1.4.5-lts.1",
+    "mysql2": "^3.9.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.23.0"
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.5"
+    "@tanstack/react-query-devtools": "^5.34.2",
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^15.0.6",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "@vitest/coverage-v8": "^1.6.0",
+    "jsdom": "^24.0.0",
+    "supertest": "^7.0.0", 
+    "vite": "^5.2.11",
+    "vitest": "^1.6.0",
+    "typescript": "^5.4.5"
   }
 }

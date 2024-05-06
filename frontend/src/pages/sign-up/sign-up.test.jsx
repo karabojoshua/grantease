@@ -10,7 +10,7 @@ describe('SignUpPage', () => {
       <SignUpPage />
     </ClerkProvider>);
     
-    expect(screen.getByTestId("signup")).toBeDefined();
+    expect(screen.getByTestId("sign-up")).toBeDefined();
 
   });
 });

@@ -30,23 +30,4 @@ Make sure you have [Node.js](https://nodejs.org/) and [PNPM](https://pnpm.io/) i
     pnpm install
     ```
 
-### Development
-
-To start the development server, run the following command:
-    ```
-    pnpm dev
-    ```
-    
-### Testing The App
-To the the app in contained environment, run the following command:
-    ```
-    docker compose up -d
-    ```
-
-### Production
-To build for production, run the following command:
-    ```
-    pnpm build
-    ```
-
 * Some file have hidden, to show these files navigate to ``` .vscode/settings.json ``` and comment out the file you want to show

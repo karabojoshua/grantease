@@ -1,7 +1,6 @@
 import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
-import PropTypes from "prop-types";
 import React from "react";
 import ManageUsers from "./manage-users";
 import RoleChangeRequest from "./role-change-request";
@@ -21,12 +20,6 @@ function CustomTabPanel(props) {
     </div>
   );
 }
-
-CustomTabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
 
 function a11yProps(index) {
   return {
