@@ -10,25 +10,27 @@ vi.mock("@clerk/clerk-sdk-node", ()=>({
     }
 }))
 
-vi.mock("../../db/index.js", ()=>({
-    db: {
-        query: (sql, params, callback) => {
-            if (params instanceof Function) { // if no params
-                callback = params;
+vi.mock("mysql2", ()=>({
+    default: {
+        createConnection: () => ({
+            connect: (cb) => cb(),
+            query: (sql, params, callback) => {
+                if (params instanceof Function) { // if no params
+                    callback = params;
+                }
+    
+                if (sql.includes("SELECT * FROM user WHERE id = ?")) {
+                    callback(null, []);
+                } else if (sql.includes("SELECT COUNT(*) as count FROM user")) {
+                    callback(null, [{count: 0}]);
+                } else if (sql.includes("INSERT INTO user SET ?")) {
+                    callback(null, {id: "123", role: "admin", is_banned: 0});
+                } else {
+                    callback(new Error("Invalid SQL"));
+                }
             }
-
-            if (sql.includes("SELECT * FROM user WHERE id = ?")) {
-                callback(null, []);
-            } else if (sql.includes("SELECT COUNT(*) as count FROM user")) {
-                callback(null, [{count: 0}]);
-            } else if (sql.includes("INSERT INTO user SET ?")) {
-                callback(null, {id: "123", role: "admin", is_banned: 0});
-            } else {
-                callback(new Error("Invalid SQL"));
-            }
-        }
-    }
-}))
+        })
+}}));
 
 describe('get-user-meta', () => {
     describe('GET /user-meta', () => {

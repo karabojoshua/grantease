@@ -2,6 +2,13 @@ import supertest from 'supertest';
 import { vi } from "vitest";
 import app from './app';
 
+vi.mock("mysql2", ()=>({
+    default: {
+        createConnection: () => ({
+            connect: (cb) => cb()
+        })
+}}));
+
 vi.mock("@clerk/clerk-sdk-node", ()=>({
     ClerkExpressRequireAuth: () => (req, res, next) => {
         if (req.headers.authorization === 'Bearer good-token') {
@@ -19,7 +26,7 @@ describe('app', () => {
             expect(response.body).toEqual({ message: "Welcome, you're authenticated!" });
             expect(response.statusCode).toEqual(200);
         });
-
+ 
         it('should return 401 if not authenticated', async () => {
             const response = await supertest(app).get('/');
             expect(response.body).toEqual({ error: 'Unauthenticated' });
