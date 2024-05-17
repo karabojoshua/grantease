@@ -1,7 +1,8 @@
 import { Grid } from "@mui/material";
+import { React, useState } from 'react';
 import { createMutation, getQuery } from "../../dataprovider";
+import NotificationsModal from "../../layouts/notifications";
 import { LoadingPage } from "../loading-page";
-import "./funding-page-styles.css";
 
 const FundingPage = () => {
   const { data, isError, isLoading } = getQuery("funding-opportunities");
@@ -9,15 +10,33 @@ const FundingPage = () => {
     resource: "user/applications",
     invalidateKeys: ["funding-opportunities"],
   });
+  const [openModal, setOpenModal] = useState(false);
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
+
   if (isLoading) {
     return <LoadingPage />;
   }
   if (isError) {
     return <div>Error</div>;
   }
+  
 
   return (
     <>
+      <button onClick={handleOpenModal}>open</button>
+      <button onClick={handleCloseModal}>close</button>
+      {openModal && (
+        <NotificationsModal
+          open={openModal}
+          onClose={handleCloseModal}
+          message="This is a notification message."
+        />
+      )}
       <section className="HeroSection">
         <h1 style={{ marginTop: "0" }}>Find Your Funding Here!</h1>
         <section className="BigSearchSection">
@@ -26,9 +45,10 @@ const FundingPage = () => {
               type="search"
               name="find-funding"
               id="find-funding"
-              placeholder="Company or keyword"
+              placeholder="Search"
             />
             <button type="submit">Search</button>
+            
           </form>
         </section>
       </section>
@@ -86,6 +106,8 @@ const FundingPage = () => {
           </Grid>
         ))}
       </Grid>
+      {/* Render NotificationModal conditionally */}
+      
     </>
   );
 };
